@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Übung 2</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        let punkte = 0;
+        let eingabe = Number(prompt("Was ist das Ergebnis von 5 + 5?"));
+        if (eingabe == 10){
+            punkte++;
+        }
+        eingabe = Number(prompt("Was ist das Ergebnis von 5 - 5?"));
+        if (eingabe == 0){
+            punkte++;
+        }
+        eingabe = Number(prompt("Was ist das Ergebnis von 5 * 5?"));
+        if (eingabe == 25){
+            punkte++;
+        }
+        eingabe = Number(prompt("Was ist das Ergebnis von 5 / 5?"));
+        if (eingabe == 1){
+            punkte++;
+        }
+        eingabe = Number(prompt("Was ist das Ergebnis von 5 ** 5?"));
+        if (eingabe == 3125){
+            punkte++;
+        }
+        switch (punkte){
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+                document.write("Es wurden weniger als vier Punkte erreicht.")
+                break;
+            case 4:
+                document.write("Es wurden vier Punkte erreicht.");
+                break;
+            case 5:
+                document.write("Es wurden fünf Punkte erreicht.");
+        }
+
+
+    </script>
+</body>
+</html>

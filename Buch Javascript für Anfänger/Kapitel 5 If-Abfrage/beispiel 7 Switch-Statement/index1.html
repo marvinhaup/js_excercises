@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch-Statement ohne break</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        let eingabe = prompt("Welchen Artikel suchen Sie?");
+        switch (eingabe){
+            case "Bohrmaschine":
+            case "Bandschleifer":
+            case "Kreissäge":
+                alert("39,99€");
+                break;
+            case "Hammer":
+            case "Schraubendreher":
+                alert("9,99€");
+                break;
+            default:
+                alert("Produkt leider nicht im Sortiment enthalten.");
+        }
+    </script>
+</body>
+</html>
