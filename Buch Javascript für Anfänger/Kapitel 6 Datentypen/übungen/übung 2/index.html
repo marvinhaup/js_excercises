@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        let meinArray = [[],[],[]];
+        meinArray[0][0] = prompt("Vorname der Person eingeben");
+        meinArray[0][1] = prompt("Nachname der Person eingeben");
+        meinArray[0][2] = prompt("Alter der Person eingeben");
+        meinArray[1][0] = prompt("Vorname der Person eingeben");
+        meinArray[1][1] = prompt("Nachname der Person eingeben");
+        meinArray[1][2] = prompt("Alter der Person eingeben");
+        meinArray[2][0] = prompt("Vorname der Person eingeben");
+        meinArray[2][1] = prompt("Nachname der Person eingeben");
+        meinArray[2][2] = prompt("Alter der Person eingeben");
+
+        gesNutzer = Number(prompt("Welchen Nutzer suchen Sie?"));
+        gesNutzerInhalt = Number(prompt("Welche Information des Nutzers suchen Sie?"));
+
+        document.write("Die gesuchte Information lautet? (Vorname = 0, Nachname = 1, Alter = 2)" + meinArray[gesNutzer][gesNutzerInhalt]);
+    </script>
+</body>
+</html>

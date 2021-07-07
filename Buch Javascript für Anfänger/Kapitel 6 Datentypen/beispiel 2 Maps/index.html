@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map-Objekte</title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+        let meineMap = new Map;
+
+        meineMap.set("Vorname", prompt("Bitte geben Sie ihren Vornamen ein:"));
+        meineMap.set("Nachname", prompt("Bitte geben Sie ihren Nachnamen ein:"));
+        meineMap.set("Alter", prompt("Bitte geben Sie ihr Alter ein:"));
+
+        document.write("Vorname: " + meineMap.get("Vorname") + "<br>");
+        document.write("Nachname: " + meineMap.get("Nachname") + "<br>");
+        document.write("Alter: " + meineMap.get("Alter") + "<br>");
+
+    </script>
+</body>
+</html>
