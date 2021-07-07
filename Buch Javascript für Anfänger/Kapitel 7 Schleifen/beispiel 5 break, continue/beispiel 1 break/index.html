@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>break</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        
+        let arr = [2,7,9,15,12,18];
+
+        let eingabe = Number(prompt("Vergleichswert:"));
+        let i = 0;
+
+        for (let wert of arr){
+            if (wert === eingabe){
+                document.write("Der eingegebene Wert ist im Array vorhanden.<br>");
+                document.write("Für die Überprüfung waren " + (i+1) + " Durchläufe notwendig.");
+                break;
+            }
+            i++;
+        }
+        if (i == arr.length){
+            document.write("Der gesuchte Wert ist nicht im Array enthalten");
+        }
+
+    </script>
+</body>
+</html>

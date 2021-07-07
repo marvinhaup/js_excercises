@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for-of Schleife</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        
+        let meineMap = new Map();
+        meineMap.set("Produkttyp","Bohrmaschine");
+        meineMap.set("Preis", 34.99);
+        meineMap.set("Verfügbarkeit", true);
+
+        for (let wert of meineMap){
+            document.write("Schlüsselbegriff: " + wert[0] + "<br>");
+            document.write("Inhalt: " + wert[1] + "<br><br>");
+        }
+
+    </script>
+</body>
+</html>

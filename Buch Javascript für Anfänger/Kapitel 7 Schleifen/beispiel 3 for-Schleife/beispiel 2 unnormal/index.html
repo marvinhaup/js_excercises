@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        let startWert = Number(prompt("Bei Welchem Wert soll begonnen werden?"));
+        let inhalt = encodeURI("Bis zu welchem Wert soll gezählt werden?");
+        let endWert = Number(prompt(decodeURI(inhalt)));
+        let schrittweite = Number(prompt("In welcher Schrittweite soll gezählt werden?"));
+        
+        for (; startWert < endWert; startWert += schrittweite){
+            document.write(startWert + "<br>");
+        }
+        
+        
+    </script>
+</body>
+</html>
