@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        function Begruessung(){
+            name = prompt("Bitte geben Sie ihren Namen ein:"); // globale variable wird überschrieben
+            alert("Guten Tag, " + name); 
+        }
+        let name;
+        Begruessung(); // globale Variable wird hier deklaiert
+        document.write("Guten Tag, " + name);
+    </script>
+</body>
+</html>
