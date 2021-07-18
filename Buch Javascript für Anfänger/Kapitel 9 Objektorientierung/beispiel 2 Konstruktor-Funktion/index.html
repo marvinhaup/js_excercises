@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+        // Konstruktor-Funktion einer selbstdefinierten Objekt-Struktur
+        function Kaffeemaschine(farbe, preis, verbrauch, typ)
+        {
+            this.Farbe = farbe;
+            this.Preis = preis;
+            this.Verbrauch = verbrauch;
+            this.Typ = typ;
+        }
+        
+        // new-Operator erzeugt eine neue Instanz eines Objektes
+        let meineMaschine = new Kaffeemaschine("schwarz", 19.99, 1000, "Filtermaschine");
+
+        // Zeilenweise Ausgabe des Inhaltes des Objektes
+        // Zugriff auf Schlüssel-Inhalt mit Hilfe des Objekt-Schlüssels
+        for (let i in meineMaschine)
+        {
+            document.write(i + " : " + meineMaschine[i] + "<br>");
+        }
+
+    </script>
+</body>
+</html>
