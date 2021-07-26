@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+        class Kaffeemaschine{
+            constructor(farbe, preis, verbrauch, typ) {
+                this.Farbe = farbe;
+                this.Preis = preis;
+                this.Verbrauch = verbrauch;
+                this.Typ = typ;
+            }
+            Rabatt(wert) {
+                this.Preis *= 1 - wert/100;
+            }
+        }
+
+        let meineKaffeemaschine = new Kaffeemaschine("hellbraun", 19.99, 499, "Filtermaschine");
+
+        document.write("Vor anwenden des Rabattes: <br><br>")
+
+        for (let i in meineKaffeemaschine) {
+            document.write(i + ": " + meineKaffeemaschine[i] + "<br>");
+        }
+
+        meineKaffeemaschine.Rabatt(10);
+
+        document.write("<br>Nach anwenden des Rabattes: <br><br>")
+
+        for (let i in meineKaffeemaschine) {
+            document.write(i + ": " + meineKaffeemaschine[i] + "<br>");
+        }
+
+    </script>
+</body>
+</html>

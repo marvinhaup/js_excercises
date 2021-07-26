@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+        class eGeraete{
+            constructor(farbe, preis, verbrauch){
+                this.Farbe = farbe;
+                this.Preis = preis;
+                this.Verbrauch = verbrauch;
+            }
+        }
+
+        class Kaffeemaschine extends eGeraete{
+            constructor(farbe, preis, verbrauch, typ) {
+                super(farbe, preis, verbrauch);
+                this.Typ = typ;
+            }
+        }
+
+        let meineKaffeemaschine = new Kaffeemaschine("lachsfarben", 69.42, 1000, "Padmaschine");
+
+        for (let i in meineKaffeemaschine) {
+            document.write(i + ": " + meineKaffeemaschine[i] + "<br>");
+        }
+
+    </script>
+</body>
+</html>
