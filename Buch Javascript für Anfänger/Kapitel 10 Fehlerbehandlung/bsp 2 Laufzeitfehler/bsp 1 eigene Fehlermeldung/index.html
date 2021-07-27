@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+        let a = 1.232354345345345234234234522;
+        let x = prompt("Wie viele Stellen sollen angezeigt werden?");
+        try {
+            let b = a.toPrecision(x);
+            document.write("Wert mit der gewünschten Präzision: " + b);
+        }
+        catch {
+            alert("Wert zwischen 1 und 100 eingeben!");
+        }
+        document.write("<br>Weitere Inhalte");
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+        function Multiplikation(x) {
+            y = Number(prompt("Geben Sie den zweiten Faktor ein:")); // ohne Deklaration wird y hier als globale Variable betrachtet und überschreibt die Variable y in Zeile 18
+            // mögliche Fehlerbehebung: let y = Number... -> erzwingt im Zusammenhang mit "use strict" nur lokalen Gültigkeitsbereich
+            return x * y;
+        }
+
+        let y = 6;
+        document.write("Wert der Variablen y: " + y + "<br>");
+        document.write("Doppelter Wert der Variablen y: " + y * 2 + "<br>");
+
+        let ergebnis = Multiplikation(3);
+
+        document.write('Das Programm enthält nun die Variablen "y", mit dem Wert: ' + y);
+        document.write(' und "ergebnis" mit dem Wert: ' + ergebnis);
+
+    </script>
+</body>
+</html>

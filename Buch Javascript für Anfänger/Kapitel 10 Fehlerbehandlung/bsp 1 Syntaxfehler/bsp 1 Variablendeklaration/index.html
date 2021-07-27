@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+        class SpielerFigur {
+            constructor(name, feld){
+                this._Name = name;
+                this._Feld = feld;
+            }
+
+            set Feld(wert) {
+                this._Feld += wert;
+            }
+        }
+
+        meinSpieler = new SpielerFigur("Merlin", 42); // untersuchen mit browser
+        // Fehlermeldung: "Uncaught ReferenceError: meinSpieler is not definded at Index.html:24"
+
+        document.write("Spielerbelegung vor Funktionsanwendung:<br>")
+        for (let i in meinSpieler) {
+            document.write(i + ": " + meinSpieler[i] + "<br>");
+        }
+
+        meinSpieler.Feld = 10;
+
+        document.write("<br>Spielerbelegung nach Funktionsanwendung:<br>")
+        for (let i in meinSpieler) {
+            document.write(i + ": " + meinSpieler[i] + "<br>");
+        }
+
+    </script>
+</body>
+</html>
