@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Programm zur Darstellung der Event-Priorisierung.
+        Einzelevents werden gegenüber Zusammengesetzten Events immer bevorzugt.
+        Beispielsweise wird das mousedown-Event bevorzugt obwohl ebenso das
+        click-Event ausgelöst werden könnte, welches aus einer Kombination von 
+        mousedown und mouseup besteht.
+    -->
+    <input type="button" id="Button1" value="Hier klicken!">
+    <script>
+        "use strict";
+
+        function MouseDown() {
+            alert("mousedown-Event wurde ausgelöst.");
+        } // zum auslösen auf den Button clicken
+
+        function MouseUp() {
+            alert("mouseup-Event wurde ausgelöst.");
+        } // zum auslösen außerhalb des Buttons clicken und Maus innerhalb der button-grenze loslassen
+
+        function Click() {
+            alert("click-Event wurde ausgelöst.");
+        }
+
+        Button1.onmousedown = MouseDown;
+        Button1.onmouseup = MouseUp;
+        Button1.onclick = Click;
+
+    </script>
+</body>
+</html>

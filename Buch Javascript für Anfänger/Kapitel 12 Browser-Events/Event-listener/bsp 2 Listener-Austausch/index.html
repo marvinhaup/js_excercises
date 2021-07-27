@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" id="Button1" value="Hier klicken!">
+    <script>
+        "use strict";
+
+        function Nachricht1() {
+            alert("Button1 war mit Funktion Nachricht1 verknüpft.");
+            Button1.removeEventListener("click", Nachricht1);
+            Button1.addEventListener("click", Nachricht2);
+        }
+
+        function Nachricht2() {
+            alert("Button1 war mit Nachricht2 verknüpft.");
+            Button1.removeEventListener("click", Nachricht2);
+            Button1.addEventListener("click", Nachricht1);
+        }
+
+        Button1.addEventListener("click", Nachricht1);
+
+
+    </script>
+</body>
+</html>

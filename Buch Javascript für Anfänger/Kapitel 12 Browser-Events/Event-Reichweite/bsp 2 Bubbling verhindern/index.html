@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body * {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body id="Body">
+    <div id="Div1">
+        Das ist ein div-Element
+        <p id="P1">
+            Hier steht ein Text, bei dem ein Teil <strong id="Strong1">fett gedruckt</strong> ist.
+        </p>
+    </div>
+    <script>
+        "use strict";
+
+        function BodyTag() {
+            alert("Hier befindet sich das body-Tag");
+            event.stopPropagation();
+        }
+
+        function DivTag() {
+            alert("Hier befindet sich das div-Tag");
+            event.stopPropagation();
+        }
+
+        function PTag() {
+            alert("Hier befindet sich das p-Tag");
+            event.stopPropagation();
+        }
+
+        function StrongTag() {
+            alert("Hier befindet sich das strong-Tag");
+            event.stopPropagation();
+        }
+
+        Body.onclick = BodyTag;
+        Div1.onclick = DivTag;
+        P1.onclick = PTag;
+        Strong1.onclick = StrongTag;
+
+    </script>
+</body>
+</html>
