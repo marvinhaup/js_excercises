@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" onclick="Start()" value="Zum Starten des Timers(3s) hier klicken!">
+    <input type="button" onclick="Beenden()" value="Zum Abbrechen des Timers hier klicken!">
+    <script>
+        "use strict";
+        let globalerTimer; // globale Variable für den Timer-Zugriff
+        function Nachricht() {
+            let ausgabeText = window.encodeURI("Knopf wurde vor 3 Sekunden gedrückt");
+            window.alert(window.decodeURI(ausgabeText));
+        }
+
+        function Start() {
+            globalerTimer = window.setTimeout(Nachricht, 3000);
+        }
+
+        function Beenden() {
+            window.clearTimeout(globalerTimer);
+        }
+
+    </script>
+</body>
+</html>

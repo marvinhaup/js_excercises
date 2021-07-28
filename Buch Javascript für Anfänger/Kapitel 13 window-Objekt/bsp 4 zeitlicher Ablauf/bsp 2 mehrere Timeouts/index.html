@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" onclick="Start()" value="Zum Starten hier klicken!">
+    <script>
+        "use strict";
+        function Start() {
+            window.setTimeout(Nachricht1, 3000);
+            window.setTimeout(Nachricht2, 6000);
+        }
+
+        function Nachricht1() {
+            let ausgabeText = window.encodeURI("Der Knopf wurde vor drei Sekunden gedrückt.");
+            window.alert(window.decodeURI(ausgabeText));
+        }
+
+        function Nachricht2() {
+            let ausgabeText = window.encodeURI("Der Knopf wurde vor sechs Sekunden gedrückt.");
+            window.alert(window.decodeURI(ausgabeText));
+        }
+
+    </script>
+</body>
+</html>

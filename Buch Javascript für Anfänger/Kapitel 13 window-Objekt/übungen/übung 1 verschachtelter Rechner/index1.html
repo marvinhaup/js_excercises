@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        let zufallsZahl1 = Math.floor(Number(Math.random() * 10));
+        let zufallsZahl2 = Math.floor(Number(Math.random() * 10));
+        let ergebnis = zufallsZahl1 + zufallsZahl2;
+        let eingabeZahl = Number(window.prompt("Was ist das Ergebnis der Addition von " + zufallsZahl1 + " und " + zufallsZahl2 + " ?"));
+        if (eingabeZahl == ergebnis) {
+            window.alert("Die Eingabe war korrekt!");
+            window.open("index2.html");
+        }
+        else {
+            alert("Die Eingabe war nicht korrekt!");
+        }
+
+
+    </script>
+</body>
+</html>

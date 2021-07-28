@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+        let eingabeZahl = Number(window.prompt("Geben Sie eine Zahl ein:"));
+        let meinText = window.encodeURI("Bestätigen Sie die Eingabe?");
+        let bestaetigung = window.confirm(window.decodeURI(meinText));
+        if (bestaetigung) {
+            window.alert("Die Eingabe ist korrekt.")
+        }
+        else {
+            window.alert("Die Eingabe ist nicht korrekt");
+        }
+
+
+    </script>
+</body>
+</html>
