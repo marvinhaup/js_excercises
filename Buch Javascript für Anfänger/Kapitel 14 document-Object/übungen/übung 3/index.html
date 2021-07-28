@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="Eingabefeld1" type="text" value="Text eingeben, den der Button erhalten soll">
+    <input id="Button1" type="button" value="klick mich!" onclick="Funktion()">
+    <script>
+        "use strict";
+
+        function Funktion() {
+            document.getElementById("Button1").value = document.getElementById("Eingabefeld1").value;
+        }
+    </script>
+</body>
+</html>

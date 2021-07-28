@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="Eingabefeld">
+    <script>
+        "use strict";
+
+        let i = 1;
+        function Count() {
+            if (i >= 60) {
+                window.clearInterval(globalerTimer);
+            }
+            let ausgabeString = "Durchlauf Nummer: " + i;
+            document.getElementById("Eingabefeld").value = ausgabeString;
+            i++;
+        }
+        let globalerTimer = window.setInterval(Count, 50); 
+        // Funktion setInterval führt Funktion Count unendlich oft, alle 1000 millisekunden aus
+
+    </script>
+</body>
+</html>
