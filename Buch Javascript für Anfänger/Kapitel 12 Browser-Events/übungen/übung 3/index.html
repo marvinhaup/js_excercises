@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body * {
+            border: solid 3px blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <table id="Table1">
+        <tr>
+            <td>Lorem ipsum dolor <strong>sit amet</strong> consectetur adipisicing elit. <em>Earum, assumenda</em>?</td>
+            <td>Lorem ipsum dolor <strong>sit amet</strong> consectetur adipisicing elit. <em>Earum, assumenda</em>?</td>
+            <td>Lorem ipsum dolor <strong>sit amet</strong> consectetur adipisicing elit. <em>Earum, assumenda</em>?</td>
+        </tr>
+        <tr>
+            <td>Lorem ipsum dolor <strong>sit amet</strong> consectetur adipisicing elit. <em>Earum, assumenda</em>?</td>
+            <td>Lorem ipsum dolor <strong>sit amet</strong> consectetur adipisicing elit. <em>Earum, assumenda</em>?</td>
+            <td>Lorem ipsum dolor <strong>sit amet</strong> consectetur adipisicing elit. <em>Earum, assumenda</em>?</td>
+        </tr>
+        <tr>
+            <td>Lorem ipsum dolor <strong>sit amet</strong> consectetur adipisicing elit. <em>Earum, assumenda</em>?</td>
+            <td>Lorem ipsum dolor <strong>sit amet</strong> consectetur adipisicing elit. <em>Earum, assumenda</em>?</td>
+            <td>Lorem ipsum dolor <strong>sit amet</strong> consectetur adipisicing elit. <em>Earum, assumenda</em>?</td>
+        </tr>
+    </table>
+    <script>
+        "use strict";
+
+        function Faerben() {
+            let target = event.target.closest('td');
+            target.style.backgroundColor = 'red';
+        }
+
+        Table1.addEventListener("click", Faerben);
+
+    </script>
+</body>
+</html>

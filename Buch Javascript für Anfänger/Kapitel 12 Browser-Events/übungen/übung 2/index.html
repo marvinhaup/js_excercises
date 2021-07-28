@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body * {
+            border: 3px yellowgreen solid;
+        }
+    </style>
+</head>
+<body>
+    <div id="Div1">
+        Dies ist das parent-Div 
+        <section id="Section1">
+            Dies ist das section-Tag, innerhalb des div-Elementes 
+            <article id="Article1">
+                Dies ist das article-Tag, innerhalb des section-Tags 
+                <p id="P1"> 
+                    Dies ist das p-Tag innerhalb des article-Tags.<br>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto nesciunt beatae veniam, vitae ducimus sit. Sint nam facilis cupiditate voluptas sit! Libero veniam recusandae porro a reiciendis amet odio iure.
+                </p>
+            </article>
+        </section>
+    </div>
+    <script>
+        "use strict";
+
+        let count = 0;
+
+        function Faerben() {
+            if (count == 0) {
+                this.style.backgroundColor = 'green';
+                count++;
+            }
+            else if (count == 1) {
+                this.style.backgroundColor = 'yellow'
+                count = 0;
+                event.stopPropagation();
+            }
+        }
+
+        Div1.addEventListener("click", Faerben);
+        Section1.addEventListener("click", Faerben);
+        Article1.addEventListener("click", Faerben);
+        P1.addEventListener("click", Faerben);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body * {
+            border: 2px solid greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="Hone1">Diese Überschrift reagiert auf das dblclick-Event</h1>
+    <p id="P1">
+        Dies ist ein Paragraph, in dem ein <strong id="Strong1">fett gedrucktes</strong>, sowie ein 
+        <em id="Em1">geschweiftes</em> Wort.
+    </p>
+    <h2 id="Htwo1">Alle diese Tags reagieren auf verschiedene Events, probier es aus!</h2>
+
+
+    <script>
+        "use strict";
+
+        function DoubleClick() {
+            alert("Es wurde ein Doppelklick ausgeführt!");
+        }
+
+        function Click() {
+            alert("Ein einfacher klick wurde ausgeführt!");
+        }
+
+        function MouseEnter() {
+            alert("Der Cursor wurde in das Element hinein bewegt!");
+        }
+
+        function MouseLeave() {
+            alert("Der Cursor wurde aus dem Element heraus bewegt!")
+        }
+
+        function ContextMenu() {
+            alert("Ein Rechtsklick wurde ausgeführt!");
+        }
+
+        Hone1.addEventListener("dblclick", DoubleClick);
+        P1.addEventListener("contextmenu", ContextMenu);
+        Strong1.addEventListener("mouseenter", MouseEnter);
+        Em1.addEventListener("mouseleave", MouseLeave);
+        Htwo1.addEventListener("click", Click);
+
+    </script>
+</body>
+</html>
