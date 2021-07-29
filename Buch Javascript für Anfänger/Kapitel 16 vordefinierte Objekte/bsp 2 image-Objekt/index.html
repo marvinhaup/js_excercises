@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <figure>
+        <figcaption>
+            Berry der liebe Hund!
+        </figcaption>
+        <img src="berry0.jpg" alt="Berry" width="400" height="500">
+    </figure>
+    <button id="Button1">Hier klicken zum Tauschen</button>
+    <script>
+        "use strict";
+
+        function Tausche1() {
+            document.images[0].src = "berry1.jpg";
+            Button1.removeEventListener("click",Tausche1);
+            Button1.addEventListener("click", Tausche2);
+        }
+
+        function Tausche2() {
+            document.images[0].src = "berry2.jpg";
+            Button1.removeEventListener("click",Tausche2);
+            Button1.addEventListener("click", Tausche3);
+        }
+
+        function Tausche3() {
+            document.images[0].src = "berry0.jpg";
+            Button1.removeEventListener("click",Tausche3);
+            Button1.addEventListener("click", Tausche1);
+        }
+
+        Button1.addEventListener("click", Tausche1);
+
+    </script>
+</body>
+</html>

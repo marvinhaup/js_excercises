@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Hier steht ein Absatz der per Knopfdruck verändert wird</p>
+    <button onclick="FarbTausch()" id="Button">Style verändern</button>
+    <script>
+        "use strict";
+        function FarbTausch() {
+            document.body.firstElementChild.style.background = "red";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="Absatz1"></p>
+    <script> // Viele Ausgaben um mit Breakpoints verhalten zu beobachten
+        "use strict";
+        let str = window.document.location.search;
+        document.getElementById("Absatz1").innerHTML = str;
+        str = str.substr(1);
+        document.getElementById("Absatz1").innerHTML = str;
+        let arr = str.split('&');
+        document.getElementById("Absatz1").innerHTML = arr;
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = arr[i].split('=');
+        }
+        document.getElementById("Absatz1").innerHTML = arr;
+        let inhalt = "";
+        for (let wert of arr) {
+            inhalt += wert[0] + ": " + wert[1] + "<br>";
+        }
+        document.getElementById("Absatz1").innerHTML = inhalt;
+        document.getElementById("Absatz1").innerHTML = decodeURIComponent(inhalt);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="Span0">
+        <p id="Absatz0">
+            Hier steht ein Absatz!
+        </p>
+    </span>
+    <button id="Button0" onclick="Transformation()">
+        Textformatierung verändern
+    </button>
+    <script>
+        "use strict";
+        function Transformation() {
+            window.document.getElementById("Span0").style.border = "solid 5px red";
+            window.document.getElementById("Span0").style.width = "150px";
+            window.document.getElementById("Absatz0").style.background = "turquoise";
+            window.document.getElementById("Absatz0").style.fontSize = 30;
+            window.document.getElementById("Absatz0").style.color = "purple";
+            window.document.getElementById("Absatz0").style.display = "inline-block";
+        }
+    </script>
+</body>
+</html>
