@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="Formular">
+        <input type="text" name="Feld1" value="Formularfeld 1">
+        <input type="text" name="Feld2" value="Formularfeld 2">
+        <input type="checkbox" name="Feld3" >
+    </form>
+    <script> // checked-Zustand der checkbox "Feld3" per javascript ändern
+        document.forms.Formular.elements[2].checked = true; // checkbox-Zustand auf checked setzen
+    </script>
+</body>
+</html>
+

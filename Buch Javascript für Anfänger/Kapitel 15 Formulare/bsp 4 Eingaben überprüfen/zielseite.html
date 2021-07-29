@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="Absatz1"></p>
+    <script>
+        "use strict";
+        let str = window.document.location.search;
+        str = str.substr(1);
+        let arr = str.split('&');
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = arr[i].split('=');
+        }
+        let inhalt = "";
+        for (let wert of arr) {
+            inhalt += wert[0] + ": " + wert[1] + "<br>";
+        }
+        document.getElementById("Absatz1").innerHTML = decodeURIComponent(inhalt);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="Formular">
+        <input type="text" id="Feld1" placeholder="Formularfeld1">
+    </form>
+    <script>
+        "use strict";
+        let angeklickt = false;
+        function MyFun() {
+            if (!angeklickt) {
+                alert("Geben Sie ihren Namen ein!");
+                angeklickt = true;
+            }
+        }
+        Feld1.addEventListener("focus", MyFun);
+
+
+
+    </script>
+</body>
+</html>

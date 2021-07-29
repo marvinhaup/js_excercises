@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="Formular1" action="zielseite.html" method="GET" onsubmit="return Auswerten()">
+        Name:       <input id="Name" name="Name"> <br>
+        E-Mail:     <input id="Email" name="Email"> <br>
+        Alter:      <input id="Alter" name="Alter"> <br>
+        Absenden: <input type="submit" value="Absenden">
+    </form>
+    <script>
+        "use strict";
+
+        function Auswerten(){
+
+            if (Name.value == "") {
+                alert("Geben Sie ihren Namen ein!");
+                Name.focus();
+                return false;
+            }
+
+            if (!Email.value.includes("@")) {
+                let ausgabeString = window.encodeURI("Geben Sie eine gültige E-Mail Adresse ein!");
+                alert(window.decodeURI(ausgabeString));
+                Email.focus();
+                return false;
+            }
+
+            if (Alter.value == "") {
+                alert("Geben Sie ihr Alter ein!");
+                Alter.focus();
+                return false;
+            }
+
+            let eingabeAlter = true;
+            for (let i  = 0; i < Alter.value.length ; i++) {
+                if (Alter.value.charAt(i) < "0" || Alter.value.charAt(i) > "9" ) {
+                    eingabeAlter = false;
+                }
+            }
+            
+            if (!eingabeAlter) {
+                alert("Geben Sie eine Zahl ein!");
+                Alter.focus();
+                return false;
+            }
+            return true;
+        }
+
+    </script>
+</body>
+</html>
