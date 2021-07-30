@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, cumque cupiditate neque quos inventore impedit quam animi commodi asperiores, incidunt odio exercitationem esse a architecto illum quibusdam sequi optio eligendi dolores illo placeat iure quo. Voluptas, enim laboriosam quaerat nulla aperiam provident ex laborum, id hic quia veritatis quibusdam itaque vel quos magni totam! Fugiat, illo maxime at mollitia et qui ex velit incidunt distinctio optio doloribus earum repudiandae perferendis. Quidem animi blanditiis eum, non, cupiditate deserunt culpa quisquam veritatis nesciunt totam reprehenderit laboriosam aliquid! Dolor exercitationem, fugit culpa nisi corrupti unde impedit alias nam, facere illo, placeat quis repellendus.
+    </p>
+    <span>
+        <button id="Button0">Layout 1</button><br>
+        <button id="Button1">Layout 2</button><br>
+        <button id="Button2">Layout 3</button><br>
+    </span>
+    <script>
+        "use strict";
+
+        function Layout0() {
+            window.document.body.style.background = "red";
+            window.document.body.style.width = "70%";
+            window.document.body.style.margin = "auto";
+            window.document.body.firstElementChild.style.border = "solid 5px blue";
+        }
+        function Layout1() {
+            window.document.body.style.background = "turquoise";
+            window.document.body.style.width = "50%";
+            window.document.body.style.float = "right";
+            window.document.body.firstElementChild.style.border = "dotted 10 px red";
+
+        }
+        function Layout2() {
+            window.document.body.style.background = "lightblue";
+            window.document.body.style.width = "60%";
+            window.document.body.style.float = "left";
+            window.document.body.firstElementChild.style.border = "dashed 5px yellow";
+        }
+
+
+
+        Button0.addEventListener("click", Layout0);
+        Button1.addEventListener("click", Layout1);
+        Button2.addEventListener("click", Layout2);
+
+    </script>
+</body>
+</html>

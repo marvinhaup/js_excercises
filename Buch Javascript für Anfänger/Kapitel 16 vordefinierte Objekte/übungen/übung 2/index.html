@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <figure>
+        <img src="" alt="Berry der liebe Hund" width="300" height="400">
+        <figcaption>Berry als er noch lieb war</figcaption>
+    </figure>
+    <button>Bild 1 anzeigen</button>
+    <figure>
+        <img src="" alt="Berry der liebe Hund" width="300" height="400">
+        <figcaption>Wie kann man ihm nur böse sein?</figcaption>
+    </figure>
+    <button>Bild 2 anzeigen</button>
+    <script>
+        "use strict";
+
+        function ZeigeBild1() {
+            window.document.images[0].src = "berry0.jpg";
+        }
+
+        function ZeigeBild2() {
+            window.document.body.firstElementChild.nextElementSibling.nextElementSibling.firstElementChild.src = "berry2.jpg"
+        }
+
+        window.document.body.firstElementChild.nextElementSibling.addEventListener("click", ZeigeBild1);
+        window.document.body.lastElementChild.previousElementSibling.addEventListener("click", ZeigeBild2);
+
+    </script>
+</body>
+</html>
