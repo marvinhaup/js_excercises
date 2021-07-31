@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <p>Hier steht ein Absatz</p>
+    <script>
+        "use strict";
+
+        function MyFun1() {
+            alert("Der Cursor wurde vom Element wegbewegt, mouseout()");
+        }
+
+        function MyFun2() {
+            alert("Es wurde auf das Element geclickt, mousedown()");
+        }
+
+        $("p").mouseout(MyFun1);
+        $("p").mousedown(MyFun2);
+    </script>
+</body>
+</html>

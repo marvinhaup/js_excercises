@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Bezeichnung: <input type="text" id="Bezeichnung"><br>
+    Inhalt: <input type="text" id="Inhalt"><br>
+    <input type="button" onclick="Speichern()" value="Eingabe"><br><br>
+    <input type="button" onclick="Ausgeben()" value="Werte ausgeben">
+    <p id="Ausgabe"></p>
+    <script>
+        "use strict";
+
+        function Speichern() {
+            let bezeichnung = document.getElementById("Bezeichnung").value;
+            let inhalt = document.getElementById("Inhalt").value;
+            localStorage.setItem(bezeichnung,inhalt);
+        }
+
+        function Ausgeben() {
+            let ausgabe = "";
+            for ( let wert in localStorage) {
+                ausgabe += wert + ": " + localStorage.getItem(wert);
+                ausgabe += "<br>";
+            }
+            document.getElementById("Ausgabe") = ausgabe;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="CheckCookie()">
+    <input type="button" onclick="SetCookie('anwender','','-1')" value="cookie löschen">
+    <script>
+        "use strict";
+
+        function SetCookie(cookieName, inhalt, dauer) {
+            let datum = new Date();
+            datum.setTime(datum.getTime() + (dauer * 24 * 60 * 60 * 1000));
+            let ablaufDatum = "expires" + datum.toGMTString();
+            document.cookie = cookieName + "=" + inhalt + ";" + ablaufDatum;
+        }
+ 
+        function GetCookie(cookieName) {
+            cookieName += "=";
+            let decCookie = decodeURIComponent(document.cookie);
+            let arr = decCookie.split(";");
+            for (let i = 0; i < arr.length; i++) {
+                let inhalt = arr[i];
+                while (inhalt.charAt(0) == " ") {
+                    inhalt = inhalt.substring(1);
+                }
+                if ( inhalt.indexOf(cookieName) == 0) {
+                    return inhalt.substring(cookieName.length);
+                }
+            }
+            return "";
+        }
+
+        function CheckCookie() {
+            let anwender = getCookie("anwender");
+            if (anwender != "") {
+                alert("Hallo, " + anwender + "!");
+            }
+            else {
+                anwender = prompt("Geben Sie bitte ihren Namen ein:");
+                if (anwender != "" && anwender != null) {
+                    SetCookie("anwender", anwender, 180);
+                }
+            }
+        }
+
+        
+    </script>
+</body>
+</html>

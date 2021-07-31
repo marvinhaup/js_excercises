@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <p id="P1">Hier steht ein Paragraph mit einem <strong>fett gedruckten</strong> Bereich.</p><br>
+    <input type="text" id="Input1" value="Eingabefeld 1"><br><br>
+    Ausgabefelder:<br>
+    text(): <input type="text" id="Input2" size="100"><br>
+    html(): <input type="text" id="Input3" size="100"><br>
+    val(): <input type="text" id="Input4" size="100"><br>
+    <script>
+        "use strict";
+        $("#Input2").val($("#P1").text());
+        $("#Input3").val($("#P1").html());
+        $("#Input4").val($("#Input1").val());
+    </script>
+</body>
+</html>
