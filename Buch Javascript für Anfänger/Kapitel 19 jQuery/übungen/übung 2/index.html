@@ -8,6 +8,24 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
-    
+    <div id="Div1" style="width: 200px; height: 200px; background: turquoise; position: relative;float: right;"></div>
+    <script>
+        "use strict";
+
+        function MouseOut() {
+            alert("Der Cursur wurde vom Element weg bewegt.");
+        }
+
+        function DblClick() {
+            alert("Das Element wurde doppelt geclickt");
+        }
+
+        function ContextMenu() {
+            alert("Es wurde ein rechtsclick auf das Element ausgeführt");
+        }
+
+        $("#Div1").on({mouseout: MouseOut, dblclick: DblClick, contextmenu: ContextMenu});
+
+    </script>
 </body>
 </html>

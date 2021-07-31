@@ -8,6 +8,25 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
-    
+    <h1></h1>
+    <p></p>
+    <p id="P2"></p>
+    <p></p>
+    <input type="text" id="Input1">
+    <button id="Button1"></button>
+    <script>
+        "use strict";
+
+        function SchreibeAbsatz() {
+            $("#P2").html($("#Input1").val());
+            $("#Input1").val("");
+        }
+
+        $("h1").text("Hier steht eine h1-Überschrift");
+        $("p").text("Hier steht ein Absatz.");
+        $("button").html("Text des zweiten Paragraphen ändern");
+        $("button").before("<br>");
+        $("#Button1").click(SchreibeAbsatz);
+    </script>
 </body>
 </html>
