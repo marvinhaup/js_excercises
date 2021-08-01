@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ausgabe des doppelten Wertes mit PHP</h1>
+    Eingabe: <input type="text" id="Textfeld1" size="50"><br><br>
+    Ausgabe: <input type="text" id="Textfeld2" size="50"><br><br>
+    <button onclick="Laden('berechnen.php','Textfeld2', window.document.getElementById('Textfeld1').value)">Ausgabe berechnen</button>
+    <script>
+        "use strict";
+
+        function Laden(url, element, eingabe = "") {
+            let ajaxObj = new XMLHttpRequest();
+            ajaxObj.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    window.document.getElementById(element).value = this.responseText;
+                }
+            }
+            ajaxObj.open("GET", url + "?wert=" + eingabe, true);
+            ajaxObj.send();
+        }
+
+    </script>
+</body>
+</html>

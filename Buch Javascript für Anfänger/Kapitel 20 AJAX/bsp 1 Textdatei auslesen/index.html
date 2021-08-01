@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Nachrichten anzeigen</h1>
+    <textarea id="Ausgabefeld1" style="width: 300px; height: 200px;"></textarea><br>
+    <button id="Button1" onclick="Laden()">Textdatei abrufen</button>
+
+    <script>
+
+        function Ausgabe() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("Ausgabefeld1").innerHTML = this.responseText;
+            }
+        }
+
+        function Laden() {
+            let ajaxObj = new XMLHttpRequest();
+            ajaxObj.onreadystatechange = Ausgabe;
+            ajaxObj.open("GET", "nachricht.txt", true);
+            ajaxObj.send();
+        }
+        
+    </script>
+</body>
+</html>

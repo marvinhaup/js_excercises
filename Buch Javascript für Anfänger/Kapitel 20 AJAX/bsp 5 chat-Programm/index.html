@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chat-Programm</h1>
+    <textarea id="Ausgabe" style="width: 300px; height: 200px;"></textarea><br><br>
+    <textarea id="Eingabe" style="width: 300px; height: 200px;"></textarea><br>
+    <button onclick="Eingabe()">Abschicken</button>
+    <script>
+        "use strict";
+
+        function Laden(url, element, eingabe="") {
+            let ajaxObj = new XMLHttpRequest();
+            ajaxObj.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200){
+                    window.document.getElementById(element).value = this.responseText;
+                }
+            }
+            ajaxObj.open("GET", url + "?wert=" + eingabe , true);
+            ajaxObj.send();
+        }
+
+        function Eingabe() {
+            Laden("chat.php", "Ausgabe", window.document.getElementById("Eingabe").value);
+            window.document.getElementById("Eingabe").value = "";
+            window.document.getElementById("Eingabe").focus();
+        }
+
+        function Aktualisieren() {
+            Laden("chat.php", "Ausgabe");
+        }
+
+        setInterval(Aktualisieren, 2000);
+
+    </script>
+</body>
+</html>
