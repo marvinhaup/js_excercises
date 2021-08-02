@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hier steht die Hauptüberchrift</h1>
+    <p id="P1"></p>
+    <script>
+        "use strict";
+
+        function Laden(url, element) {
+            let ajaxObj = new XMLHttpRequest();
+            ajaxObj.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById(element).innerHTML = this.responseText;
+                }
+            }
+            ajaxObj.open("GET", url, true);
+            ajaxObj.send();
+        }
+
+        window.onload(Laden("../../bsp 4 php beispiel/nachricht.php", "P1"));
+
+    </script>
+</body>
+</html>

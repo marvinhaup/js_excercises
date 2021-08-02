@@ -7,36 +7,22 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 id="Hone1"></h1>
-    <h2 id="Htwo1"></h2>
-    <p id="P1"></p>
-
-    <button onclick="Anzeigen()">Inhalte anzeigen</button>
-
+    <textarea id="Textfeld1" style="width: 300px; height: 200px;"></textarea><br><br>
+    <button id="Button1" onclick="Laden('nachricht.php', 'Textfeld1')">Nachricht laden</button>
     <script>
         "use strict";
 
         function Laden(url, element) {
             let ajaxObj = new XMLHttpRequest();
-            
             ajaxObj.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    window.document.querySelector(element).innerHTML = this.responseText;
+                    document.getElementById(element).innerHTML = this.responseText;
                 }
-            }
-
             ajaxObj.open("GET", url, true);
             ajaxObj.send();
-        };
-        
-        function Anzeigen() {
-            Laden("ueberschrift.txt", "h1");
-            Laden("unterUeberschrift.txt", "h2");
-            Laden("absatz.txt", "p");
-        }
-        
+            }
+        } 
 
-        
     </script>
 </body>
 </html>
