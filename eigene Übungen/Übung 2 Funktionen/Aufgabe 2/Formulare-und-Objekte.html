@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Formulare und Objekte</title>
+  <script>
+    // Objekt zur Speicherung der Formulardaten
+    var Katze = {
+      name: "Findus",
+      besitzer: "Pettersson",
+      alter: 4,
+      gewicht: 4.5,
+      rasse: "Straßenmischung"
+      update: function
+    };
+    // Funktion zur Initialisierung des Formulars
+    function initForm() {
+      document.querySelector('input[name=name]').value = this.name;
+      document.querySelector('input[name=besitzer]').value = this.besitzer;
+      document.querySelector('input[name=alter]').value = this.alter;
+      document.querySelector('input[name=gewicht]').value = this.gewicht;
+      document.querySelector('input[name=rasse]').value = this.rasse;
+    }
+
+    let initForm_Katze = initForm.bind(Katze);
+
+    // Aufruf von initForm nach dem Laden der Webseite
+    window.addEventListener("load", initForm_Katze);
+
+  </script>
+  <style>
+    label { 
+      display: block;
+      margin-bottom: 0.5em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Katze</h1>
+  <form>
+    <label>Name:<br><input name="name" value=""></label>
+    <label>Besitzer:<br><input name="besitzer" value=""></label>
+    <label>Alter:<br><input name="alter" value=""></label>
+    <label>Gewicht:<br><input name="gewicht" value=""></label>
+    <label>Rasse:<br><input name="rasse" value=""></label>
+  </form>
+</body>
+</html>
