@@ -1,6 +1,6 @@
 function intersection() {
     if (arguments.length > 1) {
-        matches = arguments[0];
+        let matches = arguments[0];
         let i = 1;
         while ( i < arguments.length) {
             let mystr = arguments[i];
@@ -9,6 +9,7 @@ function intersection() {
                     matches.splice(matches.indexOf(matches[j]), 1);
                 }
             }
+            i++;
         }
         return matches;
     }
@@ -23,7 +24,7 @@ function padStart(str, len, chars = " ") {
     let padspace = len - str.length;
     while (count < padspace) {
         for (let i = 0; i < chars.length; i++) {
-            mystr.push(chars[i]);
+            mystr += (chars[i]);
             count++;
             if (count == padspace) {
                 break;
@@ -31,8 +32,8 @@ function padStart(str, len, chars = " ") {
         }
     }
     for (let i = 0; i < str.length; i++ ) {
-        if (mystr.length < length) {
-            mystr.push(str[i]);
+        if (mystr.length < len) {
+            mystr += (str[i]);
         }
     }
     return mystr;
@@ -49,10 +50,28 @@ function pick(obj, args) {
     return myobj;
 }
 
-
 export {intersection, padStart, pick};
 
+/*
+let arr1 = [1, 2, 3, 4];
+let arr1 = [3, 4, 5, 6];
+cons
+*/
+/*
+let mystr = "abc";
+console.log(mystr);
+mystr = padStart(mystr, 5);
+console.log(mystr);
+*/
 
+//export {intersection, padStart, pick};
+/*let arr1 = [1, 2, 3, 4];
+let arr2 = [3, 4, 5, 6];
+let arr = [];
+console.log(arr);
+arr = intersection(arr1, arr2);
+console.log(arr);
+*/
 // intersection liefert alle Elemente zurück,
 // die in beiden Arrays enthalten sind.
 /*function intersection(arr1,arr2) {
