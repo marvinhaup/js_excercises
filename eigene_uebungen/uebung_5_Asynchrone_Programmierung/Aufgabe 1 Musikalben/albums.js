@@ -1,6 +1,4 @@
 function loadFileAndInsert() {
-    let albumContent;
-
     fetch("albums.json")
         .catch("Die datei konnte nicht gefunden werden")
         .then(response => response.json())
@@ -30,7 +28,6 @@ function loadFileAndInsert() {
             }
         });
 }
-
 
 let loadBtn = document.getElementById("btn");
 loadBtn.addEventListener("click", loadFileAndInsert);
