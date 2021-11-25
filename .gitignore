@@ -1,3 +1,4 @@
 # exclude node modules, only save them locally
 # dependencies can be downloaded with the "npm install" command
 node_modules
+package-lock.json
