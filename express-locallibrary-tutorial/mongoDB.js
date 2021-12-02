@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var Genre = require('./models/genre');
 
 // connect to MongoDB
-var mongoDB = "mongodb+srv://thecrankyjoe:FbEVsNYRDEwm4R9W@cluster0.wvh7j.mongodb.net/local_library?retryWrites=true&w=majority";
+var mongoDB = "mondodb uri";
 if (!mongoDB) {
     console.error('Environment variable MONGODB_URI must be set in order to connect to the MongoDB database.');
     process.exit(-1);
