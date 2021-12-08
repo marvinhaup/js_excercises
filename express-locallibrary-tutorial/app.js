@@ -6,8 +6,9 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var catalogRouter = require('./routes/catalog');
 var coolRouter = require('./routes/users/cool');
-
+var wiki = require('./routes/wiki');
 var app = express();
 
 // view engine setup
@@ -22,7 +23,9 @@ app.use(express.static(path.join(__dirname, 'public'))); // Middleware-Funktion 
 
 app.use('/', indexRouter); // Liefert Antwort zurück
 app.use('/users', usersRouter); // Liefert Antwort zurück
+app.use('/catalog', catalogRouter);
 app.use('/users/cool', coolRouter);
+app.use('./routes/wiki', wiki);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) { // Middleware-Funktion, von Express zur Verfügung gestellt
