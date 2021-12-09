@@ -29,19 +29,20 @@ const Genre = sequelize.define('Genre', {
 const Author = sequelize.define('Author', {
   first_name: { type: DataTypes.STRING, allowNull: false},
   family_name: { type: DataTypes.STRING, allowNull: false},
-  date_of_birth: { type: DataTypes.STRING, allowNull: false},
-  date_of_death: { type: DataTypes.STRING, allowNull: true},
+  date_of_birth: { type: DataTypes.DATEONLY, allowNull: false},
+  date_of_death: { type: DataTypes.DATEONLY, allowNull: true},
 });
 
 const Book = sequelize.define('Book', {
   title: { type: DataTypes.STRING, allowNull: false},
-  author_id: { type: DataTypes.STRING},
   summary: { type: DataTypes.STRING, allowNull:false},
   isbn: { type: DataTypes.STRING, allowNull: false},
-  genre: { type: DataTypes.STRING}
 });
 
-/* Fragen ob stimmta
+Author.hasMany(Book); // Book bekommt Fremdschlüssel von Author
+Book.belongsTo(Author); // Book:Source Author: target
+
+/* Fragen ob stimmt
 { type: Sequelize.INTEGER,
   references: 'Genre',
   referencesKey: 'id'}
