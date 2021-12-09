@@ -44,3 +44,7 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+// Beispiel Route-Abfragen
+// app.get('/book/create', function())
+// app.get('/book/:bookid', function())
