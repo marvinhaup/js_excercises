@@ -9,6 +9,9 @@ var mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+var catalogRouter = require('./routes/catalog');
+var coolRouter = require('./routes/users/cool');
+var wiki = require('./routes/wiki');
 var app = express();
 
 // connect to MongoDB
@@ -37,8 +40,11 @@ app.use(cookieParser());
 // eslint-disable-next-line no-undef
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', indexRouter); // Liefert Antwort zurück
+app.use('/users', usersRouter); // Liefert Antwort zurück
+app.use('/catalog', catalogRouter);
+app.use('/users/cool', coolRouter);
+app.use('./routes/wiki', wiki);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -58,3 +64,7 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+// Beispiel Route-Abfragen
+// app.get('/book/create', function())
+// app.get('/book/:bookid', function())
