@@ -45,6 +45,7 @@ app.use('/users', usersRouter); // Liefert Antwort zurück
 app.use('/catalog', catalogRouter);
 app.use('/users/cool', coolRouter);
 app.use('./routes/wiki', wiki);
+app.use('/wiki', wiki);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
