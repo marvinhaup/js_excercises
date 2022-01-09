@@ -8,18 +8,18 @@ var mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
 var catalogRouter = require('./routes/catalog');
 var coolRouter = require('./routes/users/cool');
 var wiki = require('./routes/wiki');
 var app = express();
 
 // connect to MongoDB
-var mongoDB = process.env.MONGODB_URI;
+var mongoDB = "";
 if (!mongoDB) {
     console.error('Environment variable MONGODB_URI must be set in order to connect to the MongoDB database.');
     process.exit(-1);
 }
+
 mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true})
     .then(() => {
         console.log('Connection to MongoDB established.');
@@ -39,7 +39,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 // eslint-disable-next-line no-undef
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use('/', indexRouter); // Liefert Antwort zurück
 app.use('/users', usersRouter); // Liefert Antwort zurück
 app.use('/catalog', catalogRouter);
@@ -61,7 +60,9 @@ app.use(function(err, req, res, next) {
 
     // render the error page
     res.status(err.status || 500);
-    res.render('error');
+    //res.render('error'); // normale render version
+    //res.json({"error" : err, "http-status": err.status}); // als json-version
+    res.json({"error" : {"message" : err.message, "http-status": err.status}});
 });
 
 module.exports = app;

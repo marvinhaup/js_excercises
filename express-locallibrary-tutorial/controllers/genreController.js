@@ -11,8 +11,9 @@ exports.genre_list = function(req, res, next) {
         .exec(function (err, list_genres) {
             if (err) { return next(err); }
             // Successful, so render.
-            res.render('genre_list', { title: 'Genre List', genre_list:  list_genres});
-        });  
+            // res.render('genre_list', { title: 'Genre List', genre_list:  list_genres}); alt
+            res.json({genre_list:  list_genres});
+        });
 };
 
 // Display detail page for a specific Genre.
@@ -37,7 +38,8 @@ exports.genre_detail = function(req, res, next) {
             return next(err);
         }
         // Successful, so render
-        res.render('genre_detail', { title: 'Genre Detail', genre: results.genre, genre_books: results.genre_books } );
+        //res.render('genre_detail', { title: 'Genre Detail', genre: results.genre, genre_books: results.genre_books } ); // alt
+        res.json({genre: results.genre, genre_books: results.genre_books } );
     });
 
 };
